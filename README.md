@@ -98,6 +98,7 @@ public interface IUnitOfWork
         }
 
         private IRepository<Customer> customerRepository;
+       // Repositories are used by getter 
         public IRepository<Customer> CustomerRepository
         {
             get
@@ -126,6 +127,7 @@ public interface IUnitOfWork
         }
 
         private IRepository<Product> productRepository;
+       // Repositories are used by getter 
         public IRepository<Product> ProductRepository
         {
             get

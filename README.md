@@ -75,7 +75,8 @@
 ```c#
 public interface IUnitOfWork
     {
-        //One should only group all the Repositories representing entities which are related to one another and depend on one another into a single UnitOfWork. 
+        //One should only group all the Repositories representing entities which are related to one another 
+        //and depend on one another into a single UnitOfWork. 
         //Unless an application contains such a scenario, UnitOfWork isn't required to be implemented.
         
         

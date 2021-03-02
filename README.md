@@ -236,3 +236,8 @@ public interface IUnitOfWork
         }
         
 ```
+## So in the end, What are the main characteristics of the Unit of Work Pattern? 
+1.References Muliplie Repositories.
+2.commit work in a single Transaction.
+3.Reduce The communication with the database
+<img sec="https://user-images.githubusercontent.com/18700494/109579953-7e0f1200-7b02-11eb-8628-fb1800c34d80.png"/>

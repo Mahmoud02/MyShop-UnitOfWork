@@ -12,11 +12,6 @@
 2. If the Customer already has an account, we  update his information and save his new information in the database (**we make a Transaction to the database**).
 3. If not, we create a New Customer.
 4. Then, make an orderObject and save it in the database (**we make another Transaction to the database**)
-5. 
-### so, what is the problem here?
-1. We make two transactions for the same operation.
-2. Both repositories[CustomerRepositore && OrderRepository] will generate and maintain their own instance of the DbContext class.
-3. If the SaveChanges of one of them fails and the other one succeeds, it will result in database inconsistency.
 
 ```c#
 [HttpPost]
@@ -67,7 +62,14 @@
         }
 ```
 
-## implementation 
+### so, what is the problem here?
+1. We make two transactions for the same operation.
+2. Both repositories[CustomerRepositore && OrderRepository] will generate and maintain their own instance of the DbContext class.
+3. If the SaveChanges of one of them fails and the other one succeeds, it will result in database inconsistency.
+
+
+
+## implementation of UnitOfWork
 ### 1-create IUnitOfWork interface
 ### 2-create UnitOfWork class
 ```c#
